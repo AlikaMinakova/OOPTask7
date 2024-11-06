@@ -23,5 +23,10 @@ public class Main {
         for (Entity<Integer> integerEntity : list) {
             System.out.println(integerEntity);
         }
+        list.delete(9);
+        list.delete(10);
+        for (Entity<Integer> integerEntity : list) {
+            System.out.println(integerEntity);
+        }
     }
 }

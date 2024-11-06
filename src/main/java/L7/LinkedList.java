@@ -30,6 +30,12 @@ public class LinkedList<T> implements Iterable<Entity<T>>, LinkedListInterface<T
         if (size == 0){
             throw new LinkedListException("список пуст");
         }
+        if (size == 1){
+            Entity<T> elem = head;
+            head = null;
+            tail = null;
+            return elem;
+        }
         Entity<T> start = head;
         while (start.getNext() != null) {
             start = start.getNext();
@@ -43,6 +49,12 @@ public class LinkedList<T> implements Iterable<Entity<T>>, LinkedListInterface<T
     public Entity<T> delete(T value) {
         if (size == 0){
             throw new LinkedListException("список пуст");
+        }
+        if (size == 1){
+            Entity<T> elem = head;
+            head = null;
+            tail = null;
+            return elem;
         }
         Entity<T> start = head;
         if (head.getValue().equals(value)) {
